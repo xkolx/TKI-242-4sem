@@ -14,8 +14,7 @@ int main() {
         return 1;
     }
     
-    L.reverse();
-    
+
     auto i = L.begin();
     while (i != L.end()) {
         ++i;
@@ -23,8 +22,6 @@ int main() {
             i = L.erase(i);
         }
     }
-    
-    L.reverse();
     
     cout << "Modified list: ";
     copy(L.begin(), L.end(), ostream_iterator<int>(cout, " "));
