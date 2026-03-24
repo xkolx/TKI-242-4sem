@@ -26,7 +26,9 @@ int main() {
 
 
     cout << "Modified list: ";
-    copy(L.begin(), L.end(), ostream_iterator<int>(cout, " "));
+    copy(L.begin(), 
+        L.end(), 
+        ostream_iterator<int>(cout, " "));
     cout << endl;
 
     return 0;
