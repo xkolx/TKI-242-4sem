@@ -4,6 +4,8 @@
 #include <utility>
 #include <cmath>
 #include <cstdlib>
+#include <iterator>
+#include <sstream>
 
 using namespace std;
 
@@ -12,19 +14,15 @@ int getLastDigit(int n) {
 }
 
 int main() {
-    int n1;
-    cin >> n1;
-    vector<int> V1(n1);
-    for (int i = 0; i < n1; ++i) {
-        cin >> V1[i];
-    }
-
-    int n2;
-    cin >> n2;
-    vector<int> V2(n2);
-    for (int i = 0; i < n2; ++i) {
-        cin >> V2[i];
-    }
+    string line1, line2;
+    getline(cin, line1);
+    getline(cin, line2);
+    
+    istringstream iss1(line1);
+    istringstream iss2(line2);
+    
+    vector<int> V1{ istream_iterator<int>(iss1), istream_iterator<int>() };
+    vector<int> V2{ istream_iterator<int>(iss2), istream_iterator<int>() };
 
     multimap<int, int> M;
     for (vector<int>::iterator it = V2.begin(); it != V2.end(); ++it) {
