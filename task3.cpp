@@ -9,9 +9,8 @@
 
 using namespace std;
 
-int getLastDigit(int n) {
-    return abs(n) % 10;
-}
+
+int getLastDigit(const int n);
 
 int main() {
     string line1, line2;
@@ -45,4 +44,9 @@ int main() {
     }
 
     return 0;
+}
+
+
+int getLastDigit(const int n) {
+    return abs(n) % 10;
 }
